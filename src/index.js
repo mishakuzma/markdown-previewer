@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom"
+import { Provider } from "react-redux";
+import * as Redux from "@reduxjs/toolkit"
+import "./index.scss"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+class Preview extends React.Component {
+    // constructor(props) {
+    //     super(props)
+    // }
+
+    render() {
+        return (
+            <div className="preview">
+                <Editor />
+                <FCCScript />
+            </div>
+        )
+    }
+}
+
+class Editor extends React.Component {
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
+}
+class FCCScript {
+    render() {
+        return(
+            <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        )
+    }
+}
+
+const store = Redux.configureStore()
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Provider store={store}>
+        <Preview />
+        <FCCScript />
+    </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
