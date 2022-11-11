@@ -15,7 +15,7 @@ export function Editor() {
             <textarea
                 id='editor'
                 aria-label="Markdown here"
-                value="# Header 1
+                defaultValue="# Header 1
 ## Header 2
 
 `inline code`
