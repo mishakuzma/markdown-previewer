@@ -27,5 +27,18 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    # - run: npm test
+    
+    # push build to repo
+    - name: NPM build and GitHub Commit
+      uses: ad-m/github-push-action@v0.6.0
     - run: npm run build --if-present
-    - run: npm test
+    - run: git commit -a -m "Site built, ready to deploy"
+    
+    - name: Push to repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+    
+
