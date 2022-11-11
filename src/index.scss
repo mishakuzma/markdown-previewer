@@ -1,6 +1,72 @@
-$main-color: #d4b376;
-$accent-color: #f1bc7f;
+// Colour variables
+$main-color: #c0f3f3;
+$accent-color: #84bed4;
+$tert-color: #7391a7;
+$main-text: #3c475c;
+$whisper-text: #74777c;
 
-.preview {
-    background-color: #d4b376;
+// Sizing variables
+$editor-width: 50vw;
+$editor-height: 25vh;
+
+// Boundary variables
+$padding: 2em;
+$margin: 2em;
+
+// Styling variables
+$border-radius: 5%;
+
+html {
+    background-color: $main-color;
 }
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editor {
+    background-color: $accent-color;
+    padding: $padding;
+    margin: $margin;
+    border-radius: $border-radius;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.editor textarea {
+    width: $editor-width;
+    height: $editor-height;
+    resize: none;
+}
+
+.previewer {
+    background-color: $accent-color;
+    border-radius: $border-radius - 1%;
+    border-style: dashed;
+    border-color: $tert-color;
+
+    width: $editor-width + 20vw;
+    // height: $editor-height;
+    padding: $padding;
+    margin: $margin;
+    // width: fit-content;
+    height: fit-content;
+
+    // display: flex;
+    // // align-items: center;
+    // justify-content: center;
+}
+
+.convertOutput {
+    background-color: $main-color;
+    // border-style: dotted;
+    padding: 0 $padding 0 $padding;
+    width: fit-content;
+
+    // align-self: center;
+    // justify-self: center;
+    // text-align: center;
+} 
